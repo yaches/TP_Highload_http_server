@@ -17,4 +17,4 @@ ADD ./ /var/www/html/
 EXPOSE 80
 
 # Запускаем сервер
-CMD python3 /var/www/html/httpd.py -r /var/www/html
+CMD python3 /var/www/html/src/httpd.py -r /var/www/html
