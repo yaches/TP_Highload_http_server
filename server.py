@@ -33,7 +33,9 @@ class MyHttpServer:
 				while True:
 					client_sock, client_addr = self.sock.accept()
 					data = client_sock.recv(self.recv_msg_size)
-				   
+
+					print(data)
+
 					if len(data.strip()) == 0:
 						client_sock.close()
 						continue

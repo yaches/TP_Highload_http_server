@@ -34,6 +34,9 @@ if __name__ == "__main__":
 		print("Please, check root directory.")
 		sys.exit()
 
+	print("Server started at {host}:{port} \nwith root dir = {root}"
+		.format(host=args.host, port=args.port, root=args.root))
+
 	server = MyHttpServer(args.root, args.host, int(args.port), 
 		int(args.ncpu), int(args.listeners), int(args.size))
 	server.start()

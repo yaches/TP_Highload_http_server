@@ -2,6 +2,8 @@ FROM ubuntu:16.04
 
 MAINTAINER Vyacheslav Kruglov
 
+USER root
+
 # Обвновление списка пакетов
 RUN apt-get -y update
 
