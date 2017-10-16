@@ -23,7 +23,7 @@ class MyHttpServer:
 		self.sock.listen(self.listeners)
 		print("Running master on PID: {}".format(os.getpid()))
 
-		for i in range(self.workers_num - 1):
+		for i in range(self.workers_num):
 			pid = os.fork()
 			if pid:
 				self.workers.append(pid)

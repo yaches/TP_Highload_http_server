@@ -1,20 +1,20 @@
-FROM ubuntu:16.04
+FROM base/archlinux
 
 MAINTAINER Vyacheslav Kruglov
 
 USER root
 
 # Обвновление списка пакетов
-RUN apt-get -y update
+RUN pacman -Sy
 
 # Установка Python3
-RUN apt-get install -y python3
+RUN pacman -S python --noconfirm
 
 # Копируем исходный код в Docker-контейнер
 ADD ./ /var/www/html/
 
 # Объявлем порт сервера
-EXPOSE 80
+EXPOSE 8080
 
 # Запускаем сервер
-CMD python3 /var/www/html/src/httpd.py -r /var/www/html
+CMD python /var/www/html/src/httpd.py -r /var/www/html -n 4 -p 8080
